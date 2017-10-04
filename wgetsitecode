@@ -1,0 +1,6 @@
+#!/bin/bash
+# Download a web page with all assets like stylesheets & inline images that are required to properly display the web page offline
+echo -n "Enter website name: "
+read SITE
+# wget ‐p ‐H ‐k ‐E --limit-rate=200k --user-agent="Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.3) Gecko/2008092416 Firefox/3.0.3" -o "./wgetsitecode.log" $SITE
+wget ‐r ‐np ‐c ‐nc --user-agent="Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.3) Gecko/2008092416 Firefox/3.0.3" $SITE
