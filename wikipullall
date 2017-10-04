@@ -1,0 +1,10 @@
+#!/bin/bash
+
+for dir in ~/Documents/wikis/*/
+do
+    cd $dir
+    echo $dir
+    git rev-parse --abbrev-ref HEAD
+    git pull
+done
+
