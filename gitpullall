@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# Change directory path to point to where your git repos are saved
 for dir in ~/Documents/repos/*/
 do
     cd $dir
