@@ -1,0 +1,28 @@
+# ubuntu
+# view currently installed java versions
+sudo -i
+update-alternatives --config java
+
+# fix jenkins installation / start error with wrong java version
+mv /var/lib/dpkg/info/jenkins.* /tmp/
+dpkg --remove --force-remove-reinstreq jenkins
+dpkg --purge jenkins
+
+# check what versions jenkins wants
+cat /etc/init.d/jenkins | grep JAVA_ALLOWED_VERSION
+
+# install java 8
+add-apt-repository ppa:linuxuprising/java
+apt-get update
+apt-get install oracle-java8-installeradd-apt-repository ppa:webupd8team/java
+
+# install java 11
+add-apt-repository ppa:linuxuprising/java
+apt-get update
+apt-get install oracle-java11-installer
+ 
+# choose correct verions (in this case java 8)
+update-alternatives --config java
+
+# start jenkins
+service jenkins start
