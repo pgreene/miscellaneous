@@ -1,0 +1,13 @@
+#!/bin/bash
+# --- Interactive Shell Script
+# --- Enter the site you want to download samples from
+
+echo -n "Enter website name: "
+read SITE
+
+wget -r -b --random-wait ‐‐directory-prefix="~/Downloads/" -e robots=off --limit-rate=200k --user-agent="Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.3) Gecko/2008092416 Firefox/3.0.3" -o "./wgetsound-wav.log" -A.wav -c $SITE 
+wget -r -b --random-wait ‐‐directory-prefix="~/Downloads/" -e robots=off --limit-rate=200k --user-agent="Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.3) Gecko/2008092416 Firefox/3.0.3" -o "./wgetsound-aif.log" -A.aif -c $SITE 
+wget -r -b --random-wait ‐‐directory-prefix="~/Downloads/" -e robots=off --limit-rate=200k --user-agent="Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.3) Gecko/2008092416 Firefox/3.0.3" -o "./wgetsound-aiff.log" -A.aiff -c $SITE
+wget -r -b --random-wait ‐‐directory-prefix="~/Downloads/" -e robots=off --limit-rate=200k --user-agent="Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.3) Gecko/2008092416 Firefox/3.0.3" -o "./wgetsound-zip.log" -A.zip -c $SITE
+wget -r -b --random-wait ‐‐directory-prefix="~/Downloads/" -e robots=off --limit-rate=200k --user-agent="Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.3) Gecko/2008092416 Firefox/3.0.3" -o "./wgetsound-tar.log" -A.tar -c $SITE
+wget -r -b --random-wait ‐‐directory-prefix="~/Downloads/" -e robots=off --limit-rate=200k --user-agent="Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.3) Gecko/2008092416 Firefox/3.0.3" -o "./wgetsound-gz.log" -A.gz -c $SITE

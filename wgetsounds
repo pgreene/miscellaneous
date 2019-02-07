@@ -1,0 +1,12 @@
+#!/bin/bash
+# --- Download samples from list of URLs
+# --- Another script will be made to generate the URL list - WIP
+
+SITE="./samplesites.txt"
+wget -r -b --random-wait ‐‐directory-prefix="~/Downloads/" -e robots=off --limit-rate=200k --user-agent="Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.3) Gecko/2008092416 Firefox/3.0.3" -o "./wgetsounds-wav.log" -A.wav -c -i $SITE 
+wget -r -b --random-wait ‐‐directory-prefix="~/Downloads/" -e robots=off --limit-rate=200k --user-agent="Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.3) Gecko/2008092416 Firefox/3.0.3" -o "./wgetsounds-wave.log" -A.wave -c -i $SITE 
+wget -r -b --random-wait ‐‐directory-prefix="~/Downloads/" -e robots=off --limit-rate=200k --user-agent="Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.3) Gecko/2008092416 Firefox/3.0.3" -o "./wgetsounds-aif.log" -A.aif -c -i $SITE 
+wget -r -b --random-wait ‐‐directory-prefix="~/Downloads/" -e robots=off --limit-rate=200k --user-agent="Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.3) Gecko/2008092416 Firefox/3.0.3" -o "./wgetsounds-aiff.log" -A.aiff -c -i $SITE
+wget -r -b --random-wait ‐‐directory-prefix="~/Downloads/" -e robots=off --limit-rate=200k --user-agent="Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.3) Gecko/2008092416 Firefox/3.0.3" -o "./wgetsounds-zip.log" -A.zip -c -i $SITE
+wget -r -b --random-wait ‐‐directory-prefix="~/Downloads/" -e robots=off --limit-rate=200k --user-agent="Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.3) Gecko/2008092416 Firefox/3.0.3" -o "./wgetsounds-tar.log" -A.tar -c -i $SITE 
+wget -r -b --random-wait ‐‐directory-prefix="~/Downloads/" -e robots=off --limit-rate=200k --user-agent="Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.3) Gecko/2008092416 Firefox/3.0.3" -o "./wgetsounds-gz.log" -A.gz -c -i $SITE
