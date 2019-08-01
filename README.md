@@ -1,4 +1,4 @@
-Random
+Miscellaneous
 ======
 
 Random scripts for various things.
