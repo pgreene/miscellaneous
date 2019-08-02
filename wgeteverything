@@ -1,6 +1,7 @@
 #!/bin/bash
 # --- Download everything from list of URLs
-# --- Another script will be made to generate the URL list - WIP
+# --- wget -E -H -k -K -p URL #gets all images etc
+
 
 SITE="./samplesites.txt"
 wget -r -b --random-wait ‐‐directory-prefix="~/Downloads/" --limit-rate=200k --user-agent="Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.3) Gecko/2008092416 Firefox/3.0.3" -o "./wgeteverything.log" -c -i $SITE 
