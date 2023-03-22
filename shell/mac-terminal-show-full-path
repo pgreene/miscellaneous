@@ -1,2 +1,5 @@
-#!/bin/bash
+# This is for the bash terminal
 echo "export PS1='\u@\H:\w$ '" >> ~/.bash_profile
+
+# This is for the zsh terminal
+echo "PS1='%d %# '" >> ~/.zshrc
