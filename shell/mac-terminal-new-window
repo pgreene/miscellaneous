@@ -1,0 +1,11 @@
+# Combined with proper Terminal Setting "Shells open with zsh" this works
+#https://apple.stackexchange.com/questions/178017/how-do-i-open-a-new-terminal-window-in-the-same-directory-as-the-current-window
+if [[ $TERM_PROGRAM == "Apple_Terminal" ]] && [[ -z "$INSIDE_EMACS" ]] {
+  function chpwd {
+    local SEARCH=' '
+    local REPLACE='%20'
+    local PWD_URL="file://$HOSTNAME${PWD//$SEARCH/$REPLACE}"
+    printf '\e]7;%s\a' "$PWD_URL"
+  }
+  chpwd
+}
