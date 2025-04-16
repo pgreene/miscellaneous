@@ -1,0 +1,32 @@
+policies:
+  - name: unused-ebs-volumes
+    resource: ebs
+    filters:
+      - state: available
+    
+
+  #- name: unattached-elastic-ips
+  #  resource: eip
+  #  filters:
+  #    - "AssociationId": absent
+  #  
+
+  - name: unused-security-groups
+    resource: security-group
+    filters:
+      - unused: true
+    
+
+  - name: stopped-instances
+    resource: ec2
+    filters:
+      - "State.Name": stopped
+    
+
+  - name: old-ebs-snapshots
+    resource: ebs-snapshot
+    filters:
+      - type: age
+        days: 30
+        op: greater-than
+    
