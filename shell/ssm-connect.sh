@@ -63,3 +63,14 @@ then
 else
   echo YOU SELECTED: $HOSTNAME
 fi
+
+echo "Connecting to $HOSTNAME in AWS $PROFILE $AWS_REGION via SSM ..."
+echo ""
+echo "Running one of these commands depending on how new the node is & you can add --debug to troubleshoot: "
+echo "aws --debug --region $AWS_REGION --profile $PROFILE ssm start-session --target $HOSTNAME --document-name AWS-StartInteractiveCommand --parameters command="bash -l" "
+echo "aws --debug --region $AWS_REGION --profile $PROFILE ssm start-session --target $HOSTNAME"
+echo ""
+echo "Once connected, for root, type: sudo -i"
+echo "Then, for ec2-user or ubuntu, type: su ec2-user or su ubuntu"
+echo ""
+aws --region $AWS_REGION --profile $PROFILE ssm start-session --target $HOSTNAME --document-name AWS-StartInteractiveCommand --parameters command="bash -l" || aws --region $AWS_REGION --profile $PROFILE ssm start-session --target $HOSTNAME 
