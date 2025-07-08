@@ -5,11 +5,17 @@ policies:
       - state: available
     
 
-  #- name: unattached-elastic-ips
-  #  resource: eip
-  #  filters:
-  #    - "AssociationId": absent
-  #  
+  - name: unused-eips
+    resource: aws.eip
+    description: |
+      Identify unused Elastic IPs (not associated with any instance or interface).
+    filters:
+      - type: value
+        key: "domain"
+        value: "vpc"  # Filter for VPC-based EIPs (optional if you want to limit)
+      - type: value
+        key: "allocationId"
+        value: absent
 
   - name: unused-security-groups
     resource: security-group
