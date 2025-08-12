@@ -22,8 +22,7 @@ terraform providers lock
 terraform apply -auto-approve
 
 # Set variables after RDS is set up
-bastion_ip="qa-bastion.won.popreach.com"
-#rds_endpoint="qa-gcand.cluster-cg10idcbm0rj.us-east-1.rds.amazonaws.com"
+bastion_ip="qa-bastion.company.popreach.com"
 rds_endpoint=`terraform output endpoint | sed 's/"//g' | sed 's/endpoint\ \=//g' | sed 's/   //g'`
 rds_user=`cat secrets.tf | grep -i default | awk 'FNR == 1 {print}' | sed 's/"//g' | sed 's/default\ \=//g' | sed 's/   //g'`
 rds_password=`cat secrets.tf | grep -i default | awk 'FNR == 2 {print}' | sed 's/"//g' | sed 's/default\ \=//g' | sed 's/   //g'`
@@ -34,7 +33,7 @@ echo $rds_user
 echo $rds_password
 
 # Create SSH tunnel & create databases
-ssh -oStrictHostKeyChecking=no -p 2233 -i ~/.ssh/won-bastion-qa.pem -C -N ec2-user@$bastion_ip -L 3306:$rds_endpoint:3306 &
+ssh -oStrictHostKeyChecking=no -p 2233 -i ~/.ssh/company-bastion-qa.pem -C -N ec2-user@$bastion_ip -L 3306:$rds_endpoint:3306 &
 
 sleep 5
 
